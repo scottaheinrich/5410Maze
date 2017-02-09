@@ -35,12 +35,14 @@ let Graphics = (function () {
         that.moveLeft = function(elapsedTime) {
             if (spec.center.x > 25) {
               spec.center.x -= 50;//(spec.speed * (elapsedTime / 1000));
+              spec.imageSource = 'anubis_L.png';
             }
         };
 
         that.moveRight = function(elapsedTime) {
             if (spec.center.x < 475) {
               spec.center.x += 50;
+              spec.imageSource = 'anubis_R.png';
             }
         };
 
@@ -95,11 +97,10 @@ let MyGame = (function() {
     let inputDispatch = {};
 
     let myTexture = Graphics.Texture({
-        imageSource: 'USU-Logo.png',
+        imageSource: 'anubis_R.png',
         center: { x: 25, y: 25 },
         width: 50,
-        height: 50,
-        speed: 300, // pixels per second
+        height: 50
     });
 
     function update() {
@@ -136,6 +137,10 @@ let MyGame = (function() {
         inputDispatch['d'] = myTexture.moveRight;
         inputDispatch['w'] = myTexture.moveUp;
         inputDispatch['s'] = myTexture.moveDown;
+        //inputDispatch[37] = myTexture.moveLeft;
+        //inputDispatch[39] = myTexture.moveRight;
+        //inputDispatch[38] = myTexture.moveUp;
+        //inputDispatch[40] = myTexture.moveDown;
 
         gameLoop();
     }
