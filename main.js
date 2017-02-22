@@ -92,25 +92,25 @@ function drawCell(cell) {
 	if (cell.edges.n === null) {
 		context.moveTo(cell.x * (1000 / size), cell.y * (1000 / size));
 		context.lineTo((cell.x + 1) * (1000 / size), cell.y * (1000 / size));
-		context.stroke();
+		//context.stroke();
 	}
 
 	if (cell.edges.s === null) {
 		context.moveTo(cell.x * (1000 / size), (cell.y + 1) * (1000 / size));
 		context.lineTo((cell.x + 1) * (1000 / size), (cell.y + 1) * (1000 / size));
-		context.stroke();
+		//context.stroke();
 	}
 
 	if (cell.edges.e === null) {
 		context.moveTo((cell.x + 1) * (1000 / size), cell.y * (1000 / size));
 		context.lineTo((cell.x + 1) * (1000 / size), (cell.y + 1) * (1000 / size));
-		context.stroke();
+		//context.stroke();
 	}
 
 	if (cell.edges.w === null) {
 		context.moveTo(cell.x * (1000 / size), cell.y * (1000 / size));
 		context.lineTo(cell.x * (1000 / size), (cell.y + 1) * (1000 / size));
-		context.stroke();
+		//context.stroke();
 	}
 }
 
@@ -155,7 +155,7 @@ function renderMaze() {
 			drawCell(maze[row][col]);
 		}
 	}
-
+	context.stroke();
 
 }
 
